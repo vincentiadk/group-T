@@ -19,7 +19,7 @@ cur.execute("INSERT INTO users (table_id, table_name, email, pwd) VALUES (?, ?, 
             ('1', 'staff', 'vincentiadksitanggang@gmail.com', bcrypt.hashpw(b'admin', salt))
             )
 cur.execute("INSERT INTO users (table_id, table_name, email, pwd) VALUES (?, ?, ?, ?)",
-            ('1', 'staff', 'henry@gmail.com', bcrypt.hashpw(b'admin', salt))
+            ('2', 'staff', 'henry@gmail.com', bcrypt.hashpw(b'admin', salt))
             )
 
 connection.commit()
