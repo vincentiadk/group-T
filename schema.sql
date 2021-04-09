@@ -16,8 +16,8 @@ CREATE TABLE presences (
     in_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     out_time TIMESTAMP DEFAULT NULL,
     staff_id INTEGER NOT NULL, 
-    FOREIGN KEY (staff_id)
-        REFERENCES staff (staff_id)
+    FOREIGN KEY(staff_id)
+        REFERENCES staff(id)
 );
 
 DROP TABLE IF EXISTS users;
@@ -28,8 +28,6 @@ CREATE TABLE users (
     table_name VARCHAR(255) DEFAULT 'staff',
     email VARCHAR(255) NOT NULL UNIQUE,
     pwd VARCHAR(255) NOT NULL,
-    status CHAR(1) NOT NULL DEFAULT '1'
-    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, 
-    FOREIGN KEY (staff_id)
-        REFERENCES staff (staff_id)
+    is_active CHAR(1) NOT NULL DEFAULT '1',
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
