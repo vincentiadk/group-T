@@ -42,7 +42,6 @@ while (exit!=True):
     #Memilih Jenis bangun ruang
     jenisBangunRuang = int(input())
     if(jenisBangunRuang>=0 and jenisBangunRuang<=6):
-        time.sleep(1)
         bangunanTerpilih = bangunRuang[jenisBangunRuang-1]
         atributeBangunan = bangunanTerpilih.getAttributes()
         jumlahAtribut = len(atributeBangunan)
@@ -59,8 +58,12 @@ while (exit!=True):
             print(bangunanTerpilih.getHasil(inputUsers[0],inputUsers[1],inputUsers[2]))
         elif(jumlahAtribut==4):
             print(bangunanTerpilih.getHasil(inputUsers[0],inputUsers[1],inputUsers[2],inputUsers[3]))
-          
-        exit=True
+        
+        time.sleep(1)
+        print("Apakah Anda sudah selesai menggunakan kalkulator?(Y/N)")
+        isSelesai = input()
+        if(isSelesai=="Y"):
+            exit=True
     else:
         print("Perintah yang Anda masukan salah, silakan coba kembali")
         continue
