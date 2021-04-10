@@ -58,7 +58,7 @@ while (exit!=True):
         
         time.sleep(1)
         print("Apakah Anda sudah selesai menggunakan kalkulator?(Y/N)")
-        isSelesai.upper() = input()
+        isSelesai = input().upper()
         if(isSelesai=="Y"):
             exit=True
     else:
