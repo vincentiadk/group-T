@@ -15,9 +15,6 @@ import Dimensi3.balok as balok
 
 import time
 
-import Dimensi2.segitiga as segitiga
-import time
-
 masterBangunRuang=[]
 masterBangunRuang.append([segitiga,persegi,persegi_panjang,lingkaran,trapesium,jajar_genjang])
 masterBangunRuang.append([kubus,limas,prisma,bola,tabung,balok])
@@ -61,7 +58,7 @@ while (exit!=True):
         
         time.sleep(1)
         print("Apakah Anda sudah selesai menggunakan kalkulator?(Y/N)")
-        isSelesai = input()
+        isSelesai.upper() = input()
         if(isSelesai=="Y"):
             exit=True
     else:
