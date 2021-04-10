@@ -3,15 +3,15 @@ import Dimensi2.segitiga as segitiga
 import Dimensi2.segitiga as persegi
 import Dimensi2.segitiga as persegi_panjang
 import Dimensi2.segitiga as lingkaran
-import Dimensi2.segitiga as trapesium
+import Dimensi2.trapesium as trapesium
 import Dimensi2.segitiga as jajar_genjang
 #import library 3 dimensi
-import Dimensi2.segitiga as kubus
+import Dimensi3.kubus as kubus
 import Dimensi2.segitiga as limas
 import Dimensi2.segitiga as prisma
 import Dimensi2.segitiga as bola
 import Dimensi2.segitiga as tabung
-import Dimensi2.segitiga as balok
+import Dimensi3.balok as balok
 
 import time
 
