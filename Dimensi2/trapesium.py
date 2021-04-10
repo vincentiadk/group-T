@@ -6,7 +6,7 @@ def getLuas(a, b, t):
     return luas
 
 def getKeliling(a, b, t):
-    c = (((a-b) ** 2) + (t ** 2)) ** 1/2
+    c = (((a-b) ** 2) + (t ** 2)) ** .5
     keliling = a + b + c + t
     return keliling
 

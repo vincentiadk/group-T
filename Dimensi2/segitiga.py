@@ -6,7 +6,7 @@ def getLuas(alas, tinggi):
     return luas
 
 def getKeliling(alas, tinggi):
-    sisi = ((alas ** 2) + (tinggi ** 2)) ** 1/2
+    sisi = ((alas ** 2) + (tinggi ** 2)) ** .5    
     keliling = sisi + alas + tinggi
     return keliling
 
