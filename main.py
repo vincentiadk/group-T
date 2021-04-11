@@ -47,13 +47,13 @@ while (exit!=True):
         for atribut in atributeBangunan:
             print("Masukkan "+ atribut + " : ", end ="")
             value = float(input())
-            input_ = bangunanTerpilih.checkError(atribut, value)
+            input_ = bangunanTerpilih.checkError(inputUsers, atribut, value)
             
             while (input_ != True) :
                 print(input_)
                 print("Masukkan "+ atribut + " : ", end ="")
                 value = float(input())
-                input_ = bangunanTerpilih.checkError(atribut, value)
+                input_ = bangunanTerpilih.checkError(inputUsers, atribut, value)
             inputUsers.append(value)
                     
 

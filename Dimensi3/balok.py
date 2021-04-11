@@ -16,7 +16,7 @@ def getHasil(p, l, t):
     hasil = "Volume Balok = " + str(getVolume(p, l, t)) + "\n" + "Luas Permukaan Balok = " + str(getLuasPermukaan(p, l, t))
     return hasil
 
-def checkError(nama, value) :
+def checkError(inputUsers, nama, value) :
     if nama == "panjang"  :
         if value <= 0 :
             return nama + " tidak boleh kurang dari atau sama dengan 0"

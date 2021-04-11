@@ -14,7 +14,7 @@ def getHasil(a, b, t):
     hasil = "Luas Trapesium = " + str(getLuas(a,b,t)) + "\n" + "Keliling Trapesium = " + str(getKeliling(a,b,t))
     return hasil
 
-def checkError(nama, value) :
+def checkError(inputUsers, nama, value) :
     if nama == "alas atas"  :
         if value <= 0 :
             return nama + " tidak boleh kurang dari atau sama dengan 0"
