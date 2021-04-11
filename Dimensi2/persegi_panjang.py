@@ -1,5 +1,5 @@
 def getAttributes():
-    return ['sisi panjang', 'sisi pendek']
+    return ['panjang', 'lebar']
 
 def keliling(sisi_panjang, sisi_pendek):
     return 2*sisi_panjang + 2*sisi_pendek
@@ -8,12 +8,12 @@ def luas(sisi_panjang, sisi_pendek):
     return sisi_panjang*sisi_pendek
 
 def checkError(nama, value) :
-    if nama == "sisi panjang"  :
+    if nama == "panjang"  :
         if value <= 0 :
             return nama + " tidak boleh kurang dari atau sama dengan 0"
         else :
             return True
-    elif nama == "sisi pendek" :
+    elif nama == "lebar" :
         if value <= 0 :
             return nama + " tidak boleh kurang dari atau sama dengan 0"
         else : 
