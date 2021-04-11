@@ -2,11 +2,11 @@ def getAttributes():
     return ["jari-jari", "tinggi"]
 
 def getVolume(r, t):
-    volume = 3.14 * r ** 2 * t
+    volume = (22/7) * r ** 2 * t
     return volume
 
 def getLuasPermukaan(r, t):
-    luas_permukaan = 2 * 3.14 * r * (r + t)
+    luas_permukaan = 2 * (22/7) * r * (r + t)
     return luas_permukaan
 
 def getHasil(r, t):
