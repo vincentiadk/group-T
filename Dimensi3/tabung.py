@@ -13,7 +13,7 @@ def getHasil(r, t):
     hasil = "Volume = " + str(getVolume(r, t)) + "\n" + "Luas Permukaan =" + str(getLuasPermukaan(r, t))
     return hasil
 
-def checkError(nama, value) :
+def checkError(inputUsers, nama, value) :
     if nama == "jari-jari"  :
         if value <= 0 :
             return nama + " tidak boleh kurang dari atau sama dengan 0"
