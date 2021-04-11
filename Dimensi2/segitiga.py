@@ -6,10 +6,13 @@ def getLuas(alas, tinggi):
     return luas
 
 def getKeliling(alas, tinggi):
-    sisi = ((alas ** 2) + (tinggi ** 2)) ** .5    
-    keliling = sisi + alas + tinggi
-    return keliling
+    sisi = ((alas ** 2) + (tinggi ** 2)) ** .5 
+    sisiSama = (((alas/2) ** 2) + (tinggi ** 2)) ** .5   
+    keliling1 = sisi + alas + tinggi
+    keliling2 = (sisiSama * 2) + alas
+    return [keliling1, keliling2]
 
 def getHasil(alas, tinggi):
-    hasil = "Luas = " + str(getLuas(alas,tinggi)) + "\n" + "Keliling = " + str(getKeliling(alas,tinggi))
+    keliling = getKeliling(alas,tinggi)
+    hasil = "Luas Segitiga = " + str(getLuas(alas,tinggi)) + "\n" + "Keliling Segitiga Siku-siku = " + str(keliling[0]) +"\n" + "Keliling Segitiga Sama Sisi = " + str(keliling[1]) 
     return hasil
