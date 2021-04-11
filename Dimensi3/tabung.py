@@ -12,3 +12,15 @@ def getLuasPermukaan(r, t):
 def getHasil(r, t):
     hasil = "Volume = " + str(getVolume(r, t)) + "\n" + "Luas Permukaan =" + str(getLuasPermukaan(r, t))
     return hasil
+
+def checkError(nama, value) :
+    if nama == "jari-jari"  :
+        if value <= 0 :
+            return nama + " tidak boleh kurang dari atau sama dengan 0"
+        else :
+            return True
+    elif nama == "tinggi" :
+        if value <= 0 :
+            return nama + " tidak boleh kurang dari atau sama dengan 0"
+        else : 
+            return True
