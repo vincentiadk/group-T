@@ -47,7 +47,7 @@ def getHasil(n, sisi, panjang_selimut):
         l_permukaan = luas_permukaan(n, sisi, panjang_selimut)
         vol = volume(n, sisi, panjang_selimut)
     except:
-        return 'Error!! Panjang selimut lebih pendek daripada panjang sisi.'
+        return 'Error!! Nilai panjang selimut kurang besar.'
     else:   
         n = int(n)
         out = "\nLuas permukaan prisma segi-{0} beraturan = {1:.2f} cm\u00b2\nVolume prisma segi-{0} beraturan = {2:.2f} cm\u00b3"

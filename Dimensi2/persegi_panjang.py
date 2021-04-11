@@ -18,6 +18,11 @@ def checkError(nama, value) :
             return nama + " tidak boleh kurang dari atau sama dengan 0"
         else : 
             return True
+    # elif nama == "sisi pendek" :
+    #     if value <= inputUsers[-1] :
+    #         return nama + " tidak boleh lebih besar atau sama dengan sisi panjang."
+    #     else : 
+    #         return True
 
 def getHasil(sisi_panjang, sisi_pendek):
     kel = keliling(sisi_panjang, sisi_pendek)
