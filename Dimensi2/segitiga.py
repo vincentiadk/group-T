@@ -16,3 +16,15 @@ def getHasil(alas, tinggi):
     keliling = getKeliling(alas,tinggi)
     hasil = "Luas Segitiga = " + str(getLuas(alas,tinggi)) + "\n" + "Keliling Segitiga Siku-siku = " + str(keliling[0]) +"\n" + "Keliling Segitiga Sama Sisi = " + str(keliling[1]) 
     return hasil
+
+def checkError(nama, value) :
+    if nama == "alas"  :
+        if value <= 0 :
+            return nama + " tidak boleh kurang dari atau sama dengan 0"
+        else :
+            return True
+    elif nama == "tinggi" :
+        if value <= 0 :
+            return nama + " tidak boleh kurang dari atau sama dengan 0"
+        else : 
+            return True

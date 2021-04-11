@@ -21,10 +21,6 @@ masterBangunRuang.append([kubus,limas,prisma,bola,tabung,balok])
 
 print("=================================== \n||   CALCULATOR BANGUN RUANG     ||\n===================================")
 
-def inputAttr(attr) :
-    print("Masukkan "+attr+" : ", end="")
-    return float(input())
-
 exit = False
 while (exit!=True):
     #Memilih jenis dimensi
@@ -49,10 +45,15 @@ while (exit!=True):
         jumlahAtribut = len(atributeBangunan)
         inputUsers = []
         for atribut in atributeBangunan:
-            input_ = inputAttr(atribut)
-            while (input_ <= 0) :
-                print(atribut + " tidak boleh kurang atau sama dengan 0.")
-                input_ = inputAttr(atribut)
+            print("Masukkan "+ atribut + " : ", end ="")
+            value = float(input())
+            input_ = bangunanTerpilih.checkError(atribut, value)
+            
+            while (input_ != True) :
+                print(input_)
+                print("Masukkan "+ atribut + " : ", end ="")
+                value = float(input())
+                input_ = bangunanTerpilih.checkError(atribut, value)
             inputUsers.append(input_)
                     
 
