@@ -13,7 +13,7 @@ def getHasil(a, b, t):
     hasil = "Luas = " + str(getLuas(a, t)) + "\n" + "Keliling = " + str(getKeliling(a, b))
     return hasil
 
-def checkError(nama, value) :
+def checkError(inputUsers, nama, value) :
     if nama == "sisi alas"  :
         if value <= 0 :
             return nama + " tidak boleh kurang dari atau sama dengan 0"
