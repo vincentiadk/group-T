@@ -7,7 +7,7 @@ def keliling(sisi):
 def luas(sisi):
     return sisi**2
 
-def checkError(nama, value) :
+def checkError(inputUsers, nama, value) :
     if nama == "panjang sisi"  :
         if value <= 0 :
             return nama + " tidak boleh kurang dari atau sama dengan 0"

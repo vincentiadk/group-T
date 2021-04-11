@@ -7,22 +7,22 @@ def keliling(sisi_panjang, sisi_pendek):
 def luas(sisi_panjang, sisi_pendek):
     return sisi_panjang*sisi_pendek
 
-def checkError(nama, value) :
+def checkError(inputUsers, nama, value) :
     if nama == "panjang"  :
         if value <= 0 :
             return nama + " tidak boleh kurang dari atau sama dengan 0"
         else :
             return True
-    elif nama == "lebar" :
-        if value <= 0 :
-            return nama + " tidak boleh kurang dari atau sama dengan 0"
-        else : 
-            return True
-    # elif nama == "sisi pendek" :
-    #     if value <= inputUsers[-1] :
-    #         return nama + " tidak boleh lebih besar atau sama dengan sisi panjang."
+    # elif nama == "lebar" :
+    #     if value <= 0 :
+    #         return nama + " tidak boleh kurang dari atau sama dengan 0"
     #     else : 
     #         return True
+    elif nama == "lebar" :
+        if value >= inputUsers[0] :
+            return nama + " tidak boleh lebih besar atau sama dengan panjang."
+        else : 
+            return True
 
 def getHasil(sisi_panjang, sisi_pendek):
     kel = keliling(sisi_panjang, sisi_pendek)

@@ -20,7 +20,7 @@ def volume(n, sisi, panjang_selimut):
     tinggi = panjang_selimut * math.sin(math.acos(r/panjang_selimut))
     return (1/3) * l_alas * tinggi
 
-def checkError(nama, value) :
+def checkError(inputUsers, nama, value) :
     if nama == "jumlah sisi"  :
         if value < 3 :
             return nama + " tidak boleh kurang dari tiga."
@@ -31,16 +31,16 @@ def checkError(nama, value) :
             return nama + " tidak boleh kurang dari atau sama dengan 0."
         else : 
             return True
-    elif nama == "panjang selimut" :
-        if value <= 0 :
-            return nama + " tidak boleh kurang dari atau sama dengan 0."
-        else : 
-            return True
     # elif nama == "panjang selimut" :
-    #     if value < inputUsers[-1] :
-    #         return nama + " tidak boleh kurang dari panjang sisi."
+    #     if value <= 0 :
+    #         return nama + " tidak boleh kurang dari atau sama dengan 0."
     #     else : 
     #         return True
+    elif nama == "panjang selimut" :
+        if value < inputUsers[-1] :
+            return nama + " tidak boleh kurang dari panjang sisi : {} cm.".format(inputUsers[-1])
+        else : 
+            return True
 
 def getHasil(n, sisi, panjang_selimut):
     try:

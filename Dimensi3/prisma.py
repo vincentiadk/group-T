@@ -16,7 +16,7 @@ def volume(n, sisi, tinggi):
     l_alas = luas_alas(n, sisi)
     return l_alas*tinggi
 
-def checkError(nama, value) :
+def checkError(inputUsers, nama, value) :
     if nama == "jumlah sisi"  :
         if value < 3 :
             return nama + " tidak boleh kurang dari tiga."
