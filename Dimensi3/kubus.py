@@ -10,5 +10,14 @@ def getLuasPermukaan(sisi):
     return luasPermukaan
 
 def getHasil(sisi):
-    hasil = "Volume = " + str(getVolume(sisi)) + "\n" + "Luas Permukaan = " + str(getLuasPermukaan(sisi))
+    hasil = "Volume Kubus = " + str(getVolume(sisi)) + "\n" + "Luas Permukaan Kubus = " + str(getLuasPermukaan(sisi))
     return hasil
+
+def checkError(nama, value) :
+    if nama == "panjang sisi"  :
+        if value <= 0 :
+            return nama + " tidak boleh kurang dari atau sama dengan 0"
+        else :
+            return True
+    else :
+        return True
