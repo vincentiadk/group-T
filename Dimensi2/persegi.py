@@ -1,7 +1,5 @@
-from geom_exception import NilaiNolError, SegiError, SisiError
-
 def getAttributes():
-    return ['sisi']
+    return ['panjang sisi']
 
 def keliling(sisi):
     return 4*sisi
@@ -9,17 +7,14 @@ def keliling(sisi):
 def luas(sisi):
     return sisi**2
 
+def checkError(nama, value) :
+    if nama == "panjang sisi"  :
+        if value <= 0 :
+            return nama + " tidak boleh kurang dari atau sama dengan 0"
+        else :
+            return True
+    
 def getHasil(sisi):
-    while True:
-        try:
-            if sisi <= 0:
-                raise NilaiNolError
-            break
-        except NilaiNolError:
-            print("Sisi tidak boleh bernilai nol atau negatif.")
-        except ValueError:
-            print("Input harus berupa angka.")
-        # Belum tau request input baru dimasukin di mana
     kel = keliling(sisi)
     l = luas(sisi)
 

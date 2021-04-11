@@ -1,5 +1,4 @@
 import math
-from geom_exception import NilaiNolError, SegiError, SisiError
 
 def getAttributes():
     return ['jumlah sisi', 'panjang sisi', 'tinggi']
@@ -17,27 +16,27 @@ def volume(n, sisi, tinggi):
     l_alas = luas_alas(n, sisi)
     return l_alas*tinggi
 
-def getHasil(n, sisi, tinggi):
-    while True:
-        try:
-            if n < 3:
-                raise SegiError
-            if sisi <= 0:
-                raise NilaiNolError
-            if tinggi <= 0:
-                raise NilaiNolError
-        except SegiError:
-            print("Untuk membentuk bangun ruang, dibutuhkan minimal tiga sisi.")
-        except NilaiNolError:
-            print("Nilai tidak boleh negatif atau nol.")
-        except ValueError:
-            print("Input harus berupa angka.")
-    # Belum tau request input baru dimasukin di mana
+def checkError(nama, value) :
+    if nama == "jumlah sisi"  :
+        if value < 3 :
+            return nama + " tidak boleh kurang dari tiga."
+        else :
+            return True
+    elif nama == "panjang sisi" :
+        if value <= 0 :
+            return nama + " tidak boleh kurang dari atau sama dengan 0."
+        else : 
+            return True
+    elif nama == "tinggi" :
+        if value <= 0 :
+            return nama + " tidak boleh kurang dari atau sama dengan 0."
+        else : 
+            return True
 
-    
+def getHasil(n, sisi, tinggi):
     l_permukaan = luas_permukaan(n, sisi, tinggi)
     vol = volume(n, sisi, tinggi)
-
+    n = int(n)
     out = "\nLuas permukaan prisma segi-{0} beraturan = {1:.2f} cm\u00b2\nVolume prisma segi-{0} beraturan = {2:.2f} cm\u00b3"
     
     return out.format(n, l_permukaan, vol)

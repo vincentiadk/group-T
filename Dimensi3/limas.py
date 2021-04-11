@@ -1,8 +1,7 @@
 import math
-from geom_exception import NilaiNolError, SegiError, SisiError
 
 def getAttributes():
-    return ['jumlah sisi', ' panjang sisi', 'panjang_selimut']
+    return ['jumlah sisi', 'panjang sisi', 'panjang selimut']
 
 def luas_alas(n, sisi):
     return 0.25 * n * sisi**2 * (1 / math.tan(math.pi/n))
@@ -21,29 +20,36 @@ def volume(n, sisi, panjang_selimut):
     tinggi = panjang_selimut * math.sin(math.acos(r/panjang_selimut))
     return (1/3) * l_alas * tinggi
 
-def getHasil(n, sisi, panjang_selimut):
-    while True:
-        try:
-            if n < 3:
-                raise SegiError
-            if sisi <= 0:
-                raise NilaiNolError
-            if panjang_selimut <= 0:
-                raise NilaiNolError
-            if panjang_selimut < sisi:
-                raise SisiError
-        except SegiError:
-            print("Untuk membentuk bangun ruang, dibutuhkan minimal tiga sisi.")
-        except NilaiNolError:
-            print("Nilai tidak boleh negatif atau nol.")
-        except SisiError:
-            print("Panjang selimut tidak boleh lebih kecil daripada panjang sisi.")
-        except ValueError:
-            print("Input harus berupa angka.")
-    # Belum tau request input baru dimasukin di mana
-    l_permukaan = luas_permukaan(n, sisi, panjang_selimut)
-    vol = volume(n, sisi, panjang_selimut)
+def checkError(nama, value) :
+    if nama == "jumlah sisi"  :
+        if value < 3 :
+            return nama + " tidak boleh kurang dari tiga."
+        else :
+            return True
+    elif nama == "panjang sisi" :
+        if value <= 0 :
+            return nama + " tidak boleh kurang dari atau sama dengan 0."
+        else : 
+            return True
+    elif nama == "panjang selimut" :
+        if value <= 0 :
+            return nama + " tidak boleh kurang dari atau sama dengan 0."
+        else : 
+            return True
+    # elif nama == "panjang selimut" :
+    #     if value < inputUsers[-1] :
+    #         return nama + " tidak boleh kurang dari panjang sisi."
+    #     else : 
+    #         return True
 
-    out = "\nLuas permukaan prisma segi-{0} beraturan = {1:.2f} cm\u00b2\nVolume prisma segi-{0} beraturan = {2:.2f} cm\u00b3"
-    
-    return out.format(n, l_permukaan, vol)
+def getHasil(n, sisi, panjang_selimut):
+    try:
+        l_permukaan = luas_permukaan(n, sisi, panjang_selimut)
+        vol = volume(n, sisi, panjang_selimut)
+    except:
+        return 'Error!! Panjang selimut lebih pendek daripada panjang sisi.'
+    else:   
+        n = int(n)
+        out = "\nLuas permukaan prisma segi-{0} beraturan = {1:.2f} cm\u00b2\nVolume prisma segi-{0} beraturan = {2:.2f} cm\u00b3"
+        
+        return out.format(n, l_permukaan, vol)
