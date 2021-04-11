@@ -54,7 +54,7 @@ while (exit!=True):
                 print("Masukkan "+ atribut + " : ", end ="")
                 value = float(input())
                 input_ = bangunanTerpilih.checkError(atribut, value)
-            inputUsers.append(input_)
+            inputUsers.append(value)
                     
 
         if(jumlahAtribut==1):
