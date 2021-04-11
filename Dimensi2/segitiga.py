@@ -26,7 +26,5 @@ def checkError(inputUsers, nama, value) :
     elif nama == "tinggi" :
         if value <= 0 :
             return nama + " tidak boleh kurang dari atau sama dengan 0"
-        if value < inputUsers[0] :
-            return nama + " tidak boleh kurang dari alas : " + str(inputUsers[0])
         else : 
             return True
