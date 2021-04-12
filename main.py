@@ -49,39 +49,49 @@ while (exit!=True):
         continue
     
     #Memilih Jenis bangun ruang
-    jenisBangunRuang = int(input())
-    if(jenisBangunRuang>=0 and jenisBangunRuang<=6):
-        bangunanTerpilih = bangunRuang[jenisBangunRuang-1]
-        atributeBangunan = bangunanTerpilih.getAttributes()
-        jumlahAtribut = len(atributeBangunan)
-        inputUsers = []
-        for atribut in atributeBangunan:
-            value = inputFloatAtribut(atribut)
-            input_ = bangunanTerpilih.checkError(inputUsers, atribut, value)
-            
-            while (input_ != True) :
-                print(input_)
-                value = inputFloatAtribut(atribut)
-                input_ = bangunanTerpilih.checkError(inputUsers, atribut, value)
-            inputUsers.append(value)
+    isJenisRuang = False
+    while(isJenisRuang != True):
+        try:
+            jenisBangunRuang = int(input())
+            if(jenisBangunRuang>=0 and jenisBangunRuang<=6):
+                isJenisRuang = True
+                bangunanTerpilih = bangunRuang[jenisBangunRuang-1]
+                atributeBangunan = bangunanTerpilih.getAttributes()
+                jumlahAtribut = len(atributeBangunan)
+                inputUsers = []
+                for atribut in atributeBangunan:
+                    value = inputFloatAtribut(atribut)
+                    input_ = bangunanTerpilih.checkError(inputUsers, atribut, value)
                     
+                    while (input_ != True) :
+                        print(input_)
+                        value = inputFloatAtribut(atribut)
+                        input_ = bangunanTerpilih.checkError(inputUsers, atribut, value)
+                    inputUsers.append(value)
+                            
 
-        if(jumlahAtribut==1):
-            print(bangunanTerpilih.getHasil(inputUsers[0]))
-        elif(jumlahAtribut==2):
-            print(bangunanTerpilih.getHasil(inputUsers[0],inputUsers[1]))
-        elif(jumlahAtribut==3):
-            print(bangunanTerpilih.getHasil(inputUsers[0],inputUsers[1],inputUsers[2]))
-        elif(jumlahAtribut==4):
-            print(bangunanTerpilih.getHasil(inputUsers[0],inputUsers[1],inputUsers[2],inputUsers[3]))
-        
-        time.sleep(1)
-        print("Apakah Anda sudah selesai menggunakan kalkulator?(Y/N)", end=" ")
-        isSelesai = input().upper()
-        if(isSelesai=="Y"):
-            exit=True
-    else:
-        print("Perintah yang Anda masukan salah, silakan coba kembali")
-        continue
+                if(jumlahAtribut==1):
+                    print(bangunanTerpilih.getHasil(inputUsers[0]))
+                elif(jumlahAtribut==2):
+                    print(bangunanTerpilih.getHasil(inputUsers[0],inputUsers[1]))
+                elif(jumlahAtribut==3):
+                    print(bangunanTerpilih.getHasil(inputUsers[0],inputUsers[1],inputUsers[2]))
+                elif(jumlahAtribut==4):
+                    print(bangunanTerpilih.getHasil(inputUsers[0],inputUsers[1],inputUsers[2],inputUsers[3]))
+                
+                time.sleep(1)
+                print("Apakah Anda sudah selesai menggunakan kalkulator?(Y/N)", end=" ")
+                isSelesai = input().upper()
+                if(isSelesai=="Y"):
+                    exit=True
+            else:
+                print("Angka yang diijinkan hanya antara 1 - 6")            
+                time.sleep(1)
+                print("Pilih nomor bangun ruang:")       
+        except ValueError:
+            print('Anda hanya diijinkan untuk melakukan input angka(integer)')
+            time.sleep(1)
+            print('Pilih nomor bangun ruang:')        
+             
 
 
