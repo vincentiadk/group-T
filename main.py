@@ -19,6 +19,17 @@ masterBangunRuang=[]
 masterBangunRuang.append([segitiga,persegi,persegi_panjang,lingkaran,trapesium,jajar_genjang])
 masterBangunRuang.append([kubus,limas,prisma,bola,tabung,balok])
 
+
+def inputFloatAtribut(atribut) :
+    print("Masukkan "+ atribut + " : ", end ="")
+    value = 0
+    try :
+        value = float(input())
+    except ValueError :
+        print("Input yang Anda masukkan salah, hanya menerima angka.")
+        value = inputFloatAtribut(atribut)
+    return value
+
 print("=================================== \n||   CALCULATOR BANGUN RUANG     ||\n===================================")
 
 exit = False
@@ -45,14 +56,12 @@ while (exit!=True):
         jumlahAtribut = len(atributeBangunan)
         inputUsers = []
         for atribut in atributeBangunan:
-            print("Masukkan "+ atribut + " : ", end ="")
-            value = float(input())
+            value = inputFloatAtribut(atribut)
             input_ = bangunanTerpilih.checkError(inputUsers, atribut, value)
             
             while (input_ != True) :
                 print(input_)
-                print("Masukkan "+ atribut + " : ", end ="")
-                value = float(input())
+                value = inputFloatAtribut(atribut)
                 input_ = bangunanTerpilih.checkError(inputUsers, atribut, value)
             inputUsers.append(value)
                     
