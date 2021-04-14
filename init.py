@@ -16,7 +16,7 @@ while(menu_ == True):
             main.showKonverter("suhu")
 
         elif menu_pilihan == 3:
-            main.showKonverter("panjang_jarak")
+            main.showKonverter("panjang dan jarak")
 
         elif menu_pilihan == 4:
             main.showKonverter("waktu")

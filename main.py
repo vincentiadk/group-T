@@ -220,7 +220,7 @@ def showBangun():
 
 
 def showKonverter(nama):
-    if nama == "panjang_jarak":
+    if nama == "panjang dan jarak jarak":
         konverterTerpilih = masterKonverter[0]
     elif nama == "suhu":
         konverterTerpilih = masterKonverter[1]
@@ -232,11 +232,10 @@ def showKonverter(nama):
 
     exitKonverter = False
     while (exitKonverter != True):
-        exitAwal = False
-        awal = ""
-        akhir = ""
+        exitSatuan = False
+        satuan = ""
         n = 0
-        while (exitAwal != True):
+        while (exitSatuan != True):
             # Memilih tipe konverter awal
             print()
             print("Pilih satuan " + jenis_konverter + " awal : ")
@@ -246,59 +245,39 @@ def showKonverter(nama):
             print("Masukan " + jenis_konverter +
                   " awal pilihan Anda : ", end='')
             try:
-                awalInt = int(input())
-                if(awalInt > 0) and (awalInt <= jmlSatuan):
-                    awal = satuan_konverter[awalInt - 1]
-                    error = konverterTerpilih.checkError(awal, akhir, n)
+                satuanInt = int(input())
+                if(satuanInt > 0) and (satuanInt <= jmlSatuan):
+                    satuan = satuan_konverter[satuanInt - 1]
+                    error = konverterTerpilih.checkError(satuan, n)
                     if error != True:
                         print(error)
                     else:
-                        exitAwal = True
+                        exitSatuan = True
                 else:
                     print(
                         "Perintah yang Anda masukan salah, hanya masukan angka 1 sampai " + str(jmlSatuan), end="")
 
-            except ValueError:
-                print(
-                    "Perintah yang Anda masukan salah, hanya masukan angka 1 sampai " + str(jmlSatuan), end="")
-
-        exitAkhir = False
-        while (exitAkhir != True):
-            # Memilih jenis konverter akhir
-            print()
-            print("Pilih satuan " + jenis_konverter + " akhir : ")
-            jmlSatuan = len(satuan_konverter)
-            for i in range(len(satuan_konverter)):
-                print("{}. {}".format(i + 1, satuan_konverter[i]))
-            print("Masukan " + jenis_konverter +
-                  " akhir pilihan Anda : ", end='')
-
-            try:
-                akhirInt = int(input())
-                if(akhirInt > 0) and (akhirInt <= jmlSatuan):
-                    akhir = satuan_konverter[akhirInt - 1]
-                    error = konverterTerpilih.checkError(awal, akhir, n)
-                    if error != True:
-                        print(error)
-                    else:
-                        exitAkhir = True
-                else:
-                    print(
-                        "Perintah yang Anda masukan salah, hanya masukan angka 1 sampai " + str(jmlSatuan), end="")
             except ValueError:
                 print(
                     "Perintah yang Anda masukan salah, hanya masukan angka 1 sampai " + str(jmlSatuan), end="")
 
         # simpan histori konverter terpilih
-        inputHistory(nama, awal + " -> " + akhir)
+        inputHistory(nama, satuan)
+        exitNilai = False
+        while (exitNilai != True) :
+            try:
+                print("Masukan nilai yang akan dikonversi : ", end='')
+                n = float(input())
+                error = konverterTerpilih.checkError(satuan, n)
+                if error != True:
+                    print(error)
+                else:
+                    exitNilai = True
+            except ValueError:
+                print("Hanya masukkan angka desimal atau integer.")
 
-        try:
-            print("Masukan nilai yang akan dikonversi : ", end='')
-            value = float(input())
-        except ValueError:
-            print("Hanya masukkan angka desimal atau integer.")
 
-        print(konverterTerpilih.getHasil(awal, akhir, value))
+        print(konverterTerpilih.getHasil(satuan, n))
 
         print("Apakah Anda masih ingin menggunakan kalkulator " +
               nama + "? (Y/N)", end='')
