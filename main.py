@@ -55,7 +55,7 @@ while (exit!=True):
             jenisBangunRuang = int(input())
             if(jenisBangunRuang>=1 and jenisBangunRuang<=6):
                 isJenisRuang = True
-                bangunanTerpilih = bangunRuang[jenisBangunRuang+1]
+                bangunanTerpilih = bangunRuang[jenisBangunRuang-1]
                 atributeBangunan = bangunanTerpilih.getAttributes()
                 jumlahAtribut = len(atributeBangunan)
                 inputUsers = []
