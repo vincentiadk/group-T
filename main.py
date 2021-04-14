@@ -315,9 +315,8 @@ def showMenu():
           "2. Kalkulator suhu",
           "3. Kalkulator panjang dan jarak",
           "4. Kalkulator waktu",
-          "5. Kalkulator standar satuan luas",
-          "6. Histori kalkulator",
-          "7. Hapus histori kalkulator",
-          "8. Keluar Aplikasi",
+          "5. Histori kalkulator",
+          "6. Hapus histori kalkulator",
+          "7. Keluar Aplikasi",
           sep="\n")
     print("Masukan menu pilihan Anda : ", end='')

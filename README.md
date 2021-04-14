@@ -13,7 +13,7 @@ Aplikasi memiliki 4 jenis kalkulator utama untuk mengkonversi dan melakukan perh
 Setiap perhitungan Anda akan disimpan dalam histori kalkulator, dan Anda dapat melihat perhitungan yang telah Anda lakukan sebelumnya.
 
 untuk menjalankan aplikasi buka command line Anda, arahkan ke dalam folder aplikasi ini, lalu ketik :
->> python __init__.py
+>> python init.py
 
 Aplikasi ini bersifat modular, Anda dapat menambahkan fitur konversi dan perhitungan lainnya bila dibutuhkan. 
 - Folder Konverter berisi modul-modul untuk melakukan konversi satuan ukuran seperti luas, panjang, dan waktu. 
