@@ -288,7 +288,7 @@ def showKonverter(nama):
 
 def showMenu():
     print()
-    print("=================================== \n||   KALKULATOR SEGALA ADA     ||\n===================================")
+    print("=================================== \n||    KALKULATOR SEGALA ADA     ||\n===================================")
     print("Pilih menu : ",
           "1. Kalkulator bangun ruang dan bangun datar",
           "2. Kalkulator suhu",
