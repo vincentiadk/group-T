@@ -220,7 +220,7 @@ def showBangun():
 
 
 def showKonverter(nama):
-    if nama == "panjang dan jarak jarak":
+    if nama == "panjang dan jarak":
         konverterTerpilih = masterKonverter[0]
     elif nama == "suhu":
         konverterTerpilih = masterKonverter[1]
@@ -288,7 +288,7 @@ def showKonverter(nama):
 
 def showMenu():
     print()
-    print("=================================== \n||    KALKULATOR SEGALA ADA     ||\n===================================")
+    print("=================================== \n||  KALKULATOR MATEMATIKA DASAR   ||\n===================================")
     print("Pilih menu : ",
           "1. Kalkulator bangun ruang dan bangun datar",
           "2. Kalkulator suhu",
